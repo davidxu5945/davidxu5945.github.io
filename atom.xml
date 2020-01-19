@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>阿西的笔记</title>
+  
+  <subtitle>爱工作，爱生活</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-01-19T16:44:45.025Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>阿西</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>读书笔记-写给忙碌的人的心脏病课</title>
+    <link href="http://yoursite.com/2020/01/20/cardiology-class-for-busy-people/"/>
+    <id>http://yoursite.com/2020/01/20/cardiology-class-for-busy-people/</id>
+    <published>2020-01-19T16:40:53.000Z</published>
+    <updated>2020-01-19T16:44:45.025Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近老爸生病了，从一篇公众号文章——&lt;a href=&quot;https://mp.weixin.qq.com/s/lbV3sgMc9ao76Yghe3wUSw&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="健康" scheme="http://yoursite.com/tags/%E5%81%A5%E5%BA%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2020/01/20/hello-world/"/>
+    <id>http://yoursite.com/2020/01/20/hello-world/</id>
+    <published>2020-01-19T16:14:28.573Z</published>
+    <updated>2020-01-19T16:14:28.573Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>读书笔记-写给忙碌的人的心脏病课</title>
+    <url>/2020/01/20/cardiology-class-for-busy-people/</url>
+    <content><![CDATA[<p>最近老爸生病了，从一篇公众号文章——<a href="https://mp.weixin.qq.com/s/lbV3sgMc9ao76Yghe3wUSw" target="_blank" rel="noopener">学个教程把自己学进医院了</a>里看到这本书。看着感觉自己也快生病了，主要最近休息的不是很好，晚上睡眠时间有时都达不到6小时。<br>我用marginnote做了笔记，并在onedrive备份了源文件。</p>
+<p><a href="https://www.processon.com/view/5d7358d6e4b03461a39feb4d#map" target="_blank" rel="noopener">https://www.processon.com/view/5d7358d6e4b03461a39feb4d#map</a></p>
+<p>我看完之后，感觉自己的运动意愿有所加强，趁机开始运动吧💪 </p>
+<p>我需要改进的有： </p>
+<ul>
+<li><p>运动习惯，每周三次，每次30分钟；现在每周一次，或者零次 </p>
+</li>
+<li><p>充足的睡眠，晚上要休息好，加班就住宿舍，不要回家了 </p>
+</li>
+<li><p>午睡不要超过30分钟！！！ </p>
+</li>
+<li><p>控制体重，BMI控制在到25以下</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>健康</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/01/20/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
