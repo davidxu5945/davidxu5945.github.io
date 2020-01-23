@@ -23,7 +23,7 @@
   var CONFIG = {
     hostname: new URL('http://yoursite.com').hostname,
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     version: '7.7.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
@@ -155,6 +155,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">7</span></a>
 
   </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>公益 404</a>
+
+  </li>
         
             
   <li class="menu-item menu-item-docs">
@@ -216,7 +221,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-01-23 10:54:18 / 修改时间：14:26:25" itemprop="dateCreated datePublished" datetime="2020-01-23T10:54:18+08:00">2020-01-23</time>
+              <time title="创建时间：2020-01-23 10:54:18 / 修改时间：14:32:02" itemprop="dateCreated datePublished" datetime="2020-01-23T10:54:18+08:00">2020-01-23</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,17 +250,14 @@
 <blockquote>
 <p>日（数字）/月（数字）/年（数字）<br>eg: 18/11/2019<br>日（数字） 月（截取英文前三个字母） 年（数字）<br>eg: 18 Nov 2019</p>
 </blockquote>
-<h3 id="数字格式"><a href="#数字格式" class="headerlink" title="数字格式"></a>数字格式</h3><p>第一个格式很好解决，就是需求写的不是很明确，如果是一位数字，是否要补全0。<br>不补全：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 将日期格式日期转换为字符串格式 自定义格式</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> date</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> dateformat</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">dateToString</span><span class="params">(Date date, String dateformat)</span> </span>&#123;</span><br><span class="line">    SimpleDateFormat df = <span class="keyword">new</span> SimpleDateFormat(dateformat,Locale.US);</span><br><span class="line">    <span class="keyword">return</span> df.format(date);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 将字符串日期转换为日期格式</span></span><br><span class="line"><span class="comment"> * 自定義格式</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> dateStr</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Date <span class="title">stringToDate</span><span class="params">(String dateStr, String dateFormat)</span> </span>&#123;</span><br><span class="line">    Date date;</span><br><span class="line">    SimpleDateFormat df = <span class="keyword">new</span> SimpleDateFormat(dateFormat);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        date = df.parse(dateStr);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">        date = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> date;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">  Date t = stringToDate(<span class="string">"2020-01-01"</span>,<span class="string">"yyyy-MM-dd"</span>);</span><br><span class="line">  System.out.println(dateToString(t, <span class="string">"d/M/y"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>补全0：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="comment">// y 与 yyyy 是一样的效果</span></span><br><span class="line">  System.out.println(dateToString(t, <span class="string">"dd/MM/y"</span>));</span><br><span class="line">  System.out.println(dateToString(t, <span class="string">"dd/MM/yyyy"</span>));</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<h3 id="月份英文"><a href="#月份英文" class="headerlink" title="月份英文"></a>月份英文</h3><p>上代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="comment">// y 与 yyyy 是一样的效果</span></span><br><span class="line">  System.out.println(dateToString(t, <span class="string">"d MMM y"</span>));</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>这里需要确认是指定输出语言，偷个懒，没暴露入参，指定为英文<code>Locale.US</code>。<br>还有一些国家也是英文，也可直接指定英文<code>Locale.ENGLISH</code>。<br>否则会取默认值。（具体默认值是啥，我也不知道😭，<del>跟服务器设置有关？</del>）</p>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>在搜索资料过程中，发现一个梗，19到20年的时间格式化，2019-12-29 被格式化为 2020-12-29。<br>原因是，字符串<code>y</code>被写成了<code>Y</code><br>y 是 Year、Y 是 Week Year。<br>按周计年的第一周是指：以星期一为周始，以星期日为周末，第一个包含该年度四天以上的周。</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=1000 height=800 src="https://www.jdoodle.com/embed/v0/1OOP"></iframe>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/23/java-date-format/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -305,7 +307,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-23 13:31:44" itemprop="dateModified" datetime="2020-01-23T13:31:44+08:00">2020-01-23</time>
+                <time title="修改时间：2020-01-23 14:32:50" itemprop="dateModified" datetime="2020-01-23T14:32:50+08:00">2020-01-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -332,14 +334,14 @@
       
           <p>记录mac上安装docker的过程</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">brew cask install docker</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看版本</span></span><br><span class="line">docker --version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看配置信息</span></span><br><span class="line">docker info</span><br></pre></td></tr></table></figure>
-<p>注册账号<br>Registry Mirrors:<br> <a href="http://hub-mirror.c.163.com" target="_blank" rel="noopener">http://hub-mirror.c.163.com</a></p>
-<h2 id="制作-运行镜像"><a href="#制作-运行镜像" class="headerlink" title="制作/运行镜像"></a>制作/运行镜像</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/docker/doodle.git</span><br><span class="line">cd doodle/cheers2019 &amp;&amp; docker build -t davidxu5945/cheers2019 .</span><br><span class="line">docker run -it --rm davidxu5945/cheers2019</span><br></pre></td></tr></table></figure>
-
-<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><p>发布springboot项目到docker</p>
-<p>build.gradle</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &#39;com.palantir.docker&#39;</span><br><span class="line"></span><br><span class="line">docker&#123;</span><br><span class="line">    buildArgs([&#39;JAR_FILE&#39;: &quot;$&#123;jar.archiveName&#125;&quot;])</span><br><span class="line">&#125;</span><br><span class="line">task buildDocker(type: Docker, dependsOn: build, group: &quot;docker&quot;) &#123;</span><br><span class="line">    dockerfile &#x3D; file(&#39;src&#x2F;main&#x2F;docker&#x2F;Dockerfile&#39;)</span><br><span class="line">    doFirst &#123;</span><br><span class="line">        copy &#123;</span><br><span class="line">            from jar</span><br><span class="line">            into stageDir</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>dockerfile</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># From java image, version : 8</span><br><span class="line"># 指定镜像，这里用网易云仓库的java8镜像</span><br><span class="line">FROM hub.c.163.com&#x2F;library&#x2F;java:8-jre</span><br><span class="line">#FROM java:openjdk-8-alpine</span><br><span class="line"></span><br><span class="line"># 挂载test-docker目录,创建&#x2F;tmp目录并持久化到Docker数据文件夹，</span><br><span class="line"># 因为Spring Boot使用的内嵌Tomcat容器默认使用&#x2F;tmp作为工作目录。</span><br><span class="line">VOLUME &#x2F;tmp</span><br><span class="line"></span><br><span class="line"># COPY or ADD to image</span><br><span class="line"># 将编译目标jar包复制到&#x2F;app.jar</span><br><span class="line">ADD $&#123;JAR_FILE&#125; app.jar</span><br><span class="line"></span><br><span class="line">RUN bash -c &quot;touch &#x2F;app.jar&quot;</span><br><span class="line"></span><br><span class="line"># 默认8080端口</span><br><span class="line"># 指定项目暴露的端口号，与项目配置一样,即容器配置的暴露端口</span><br><span class="line">EXPOSE 8080</span><br><span class="line">#ENTRYPOINT 执行项目 app.jar。为了缩短 Tomcat 启动时间，添加一个系统属性指向 &quot;&#x2F;dev&#x2F;urandom&quot; 作为 Entropy Source</span><br><span class="line">#ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;, &quot;app.jar&quot;]</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-Djava.security.egd&#x3D;file:&#x2F;dev&#x2F;.&#x2F;urandom&quot;,&quot;-jar&quot;,&quot;&#x2F;app.jar&quot;]</span><br><span class="line">#ENTRYPOINT &quot;ls -l&quot;</span><br><span class="line">#ENTRYPOINT &quot;ls -l&quot;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/21/docker-introduction/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -381,10 +383,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-01-20 17:08:43 / 修改时间：17:20:53" itemprop="dateCreated datePublished" datetime="2020-01-20T17:08:43+08:00">2020-01-20</time>
+              <time title="创建时间：2020-01-20 17:08:43" itemprop="dateCreated datePublished" datetime="2020-01-20T17:08:43+08:00">2020-01-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-23 14:32:41" itemprop="dateModified" datetime="2020-01-23T14:32:41+08:00">2020-01-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -410,7 +418,14 @@
       
           <p>安装了很多次环境，每次都要到网上去找资料，还是自己记录一下比较好。</p>
 <h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><p>本地开发经常会有使用不同版本开发的需求。<br>Mac上可以安装nvm进行版本管理。</p>
-<h2 id="配置npm"><a href="#配置npm" class="headerlink" title="配置npm"></a>配置npm</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 查看配置</span><br><span class="line">npm config list</span><br><span class="line"># 添加缓存位置</span><br><span class="line">npm config set prefix &quot;~&#x2F;nodejs&#x2F;npm_global&quot;</span><br><span class="line">npm config set cache &quot;~&#x2F;nodejs&#x2F;npm_cache&quot;</span><br><span class="line"># 添加镜像</span><br><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/20/install-nodejs/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -460,7 +475,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-20 18:14:44" itemprop="dateModified" datetime="2020-01-20T18:14:44+08:00">2020-01-20</time>
+                <time title="修改时间：2020-01-23 14:32:37" itemprop="dateModified" datetime="2020-01-23T14:32:37+08:00">2020-01-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -487,16 +502,14 @@
       
           <h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><p>存在多个测试环境</p>
 <p>需求上测试环境，需要让测试发布，发布后，经常需要人工问下，是否发布完成。</p>
-<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>通过统一的系统发布通知，减少低效的人工沟通</p>
-<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><p>建立一个通知系统，可作为中间调度， 微信、钉钉机器人</p>
-<ol>
-<li>将机器人ID 注册到该系统中</li>
-<li>每当有某个系统（SYS_CODE)在某个环境(ENV_NUM)发布时，直接调用改系统，传入系统编码 和 环境</li>
-<li>查找到订阅发布事件的机器人，推送消息即可。</li>
-<li>推送消息，应可以根据系统，自定义模板。</li>
-</ol>
-<p>画个流程图</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/17/work-flow-publish-notice/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -546,7 +559,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-23 13:30:39" itemprop="dateModified" datetime="2020-01-23T13:30:39+08:00">2020-01-23</time>
+                <time title="修改时间：2020-01-23 14:32:33" itemprop="dateModified" datetime="2020-01-23T14:32:33+08:00">2020-01-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -573,15 +586,15 @@
       
           <h1 id="Java-流式对比写法"><a href="#Java-流式对比写法" class="headerlink" title="Java 流式对比写法"></a>Java 流式对比写法</h1><h2 id="场景定义"><a href="#场景定义" class="headerlink" title="场景定义"></a>场景定义</h2><ol>
 <li>多个对比条件</li>
-<li>条件之间有优先级</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 三种条件，权重逐个降低</span></span><br><span class="line"><span class="comment">// 第一个条件，无法判断先后顺序的，由后一个条件继续比较</span></span><br><span class="line">Comparator&lt;OrderGoods&gt; notCouponCmp = (o1, o2) -&gt; o1.getId().equals(notCouponGoodsId) ? <span class="number">1</span> : o2.getId().equals(notCouponGoodsId) ? -<span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">Comparator&lt;OrderGoods&gt; couponCmp = (o1, o2) -&gt; o1.getId().equals(couponGoodsId) ? <span class="number">1</span> : o2.getId().equals(couponGoodsId) ? -<span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">Comparator&lt;OrderGoods&gt; taxCmp = (o1, o2) -&gt; &#123;</span><br><span class="line">    <span class="keyword">boolean</span> o1In = taxGoodsId.contains(o1.getId());</span><br><span class="line">    <span class="keyword">boolean</span> o2In = taxGoodsId.contains(o2.getId());</span><br><span class="line">    <span class="keyword">if</span> (o1In &amp;&amp; !o2In) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!o1In &amp;&amp; o2In) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> o1.getId().compareTo(o2.getId());</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> orderGoodsList.stream()</span><br><span class="line">        .sorted(Comparator.nullsLast(notCouponCmp).thenComparing(couponCmp).thenComparing(taxCmp))</span><br><span class="line">        .collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="引申问题：sorted方法调用发生了什么？"><a href="#引申问题：sorted方法调用发生了什么？" class="headerlink" title="引申问题：sorted方法调用发生了什么？"></a>引申问题：sorted方法调用发生了什么？</h2><p>用了什么排序算法？</p>
-<p>参考：<a href="https://blog.csdn.net/TimHeath/article/details/68930482" target="_blank" rel="noopener">https://blog.csdn.net/TimHeath/article/details/68930482</a></p>
-
+<li>条件之间有优先级
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/17/java-stream-sort/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -707,7 +720,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-23 13:33:03" itemprop="dateModified" datetime="2020-01-23T13:33:03+08:00">2020-01-23</time>
+                <time title="修改时间：2020-01-23 14:33:19" itemprop="dateModified" datetime="2020-01-23T14:33:19+08:00">2020-01-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -733,22 +746,14 @@
 
       
           <p>最近老爸生病了，从一篇公众号文章——<a href="https://mp.weixin.qq.com/s/lbV3sgMc9ao76Yghe3wUSw" target="_blank" rel="noopener">学个教程把自己学进医院了</a>里看到这本书。看着感觉自己也快生病了，主要最近休息的不是很好，晚上睡眠时间有时都达不到6小时。<br>我用marginnote做了笔记，并在onedrive备份了源文件。</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=1000 height=800 src="https://www.processon.com/view/5d7358d6e4b03461a39feb4d#map"></iframe>
-
-
-<p>我看完之后，感觉自己的运动意愿有所加强，趁机开始运动吧💪 </p>
-<p>我需要改进的有： </p>
-<ul>
-<li><p>运动习惯，每周三次，每次30分钟；现在每周一次，或者零次 </p>
-</li>
-<li><p>充足的睡眠，晚上要休息好，加班就住宿舍，不要回家了 </p>
-</li>
-<li><p>午睡不要超过30分钟！！！ </p>
-</li>
-<li><p>控制体重，BMI控制在到25以下</p>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/07/cardiology-class-for-busy-people/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -837,17 +842,40 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
         <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">分类</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
         <span class="site-state-item-count">10</span>
-        <span class="site-state-item-name">标签</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/davidxu5945" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;davidxu5945" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://aircjm.github.io/" title="https:&#x2F;&#x2F;aircjm.github.io&#x2F;" rel="noopener" target="_blank">cjm</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
 
@@ -875,7 +903,7 @@
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.7.0
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
   </div>
 
         
@@ -892,6 +920,8 @@
   </div>
 
   
+  
+  <script color='3,3,3' opacity='0.2' zIndex='-1' count='299' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@latest/canvas-nest.min.js"></script>
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
@@ -901,7 +931,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>

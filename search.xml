@@ -7,6 +7,7 @@
 <blockquote>
 <p>日（数字）/月（数字）/年（数字）<br>eg: 18/11/2019<br>日（数字） 月（截取英文前三个字母） 年（数字）<br>eg: 18 Nov 2019</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="数字格式"><a href="#数字格式" class="headerlink" title="数字格式"></a>数字格式</h3><p>第一个格式很好解决，就是需求写的不是很明确，如果是一位数字，是否要补全0。<br>不补全：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 将日期格式日期转换为字符串格式 自定义格式</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> date</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> dateformat</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">dateToString</span><span class="params">(Date date, String dateformat)</span> </span>&#123;</span><br><span class="line">    SimpleDateFormat df = <span class="keyword">new</span> SimpleDateFormat(dateformat,Locale.US);</span><br><span class="line">    <span class="keyword">return</span> df.format(date);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 将字符串日期转换为日期格式</span></span><br><span class="line"><span class="comment"> * 自定義格式</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> dateStr</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Date <span class="title">stringToDate</span><span class="params">(String dateStr, String dateFormat)</span> </span>&#123;</span><br><span class="line">    Date date;</span><br><span class="line">    SimpleDateFormat df = <span class="keyword">new</span> SimpleDateFormat(dateFormat);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        date = df.parse(dateStr);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">        date = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> date;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">  Date t = stringToDate(<span class="string">"2020-01-01"</span>,<span class="string">"yyyy-MM-dd"</span>);</span><br><span class="line">  System.out.println(dateToString(t, <span class="string">"d/M/y"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>补全0：</p>
@@ -31,6 +32,7 @@
     <url>/2020/01/21/docker-introduction/</url>
     <content><![CDATA[<p>记录mac上安装docker的过程</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装</span></span><br><span class="line">brew cask install docker</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看版本</span></span><br><span class="line">docker --version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看配置信息</span></span><br><span class="line">docker info</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>注册账号<br>Registry Mirrors:<br> <a href="http://hub-mirror.c.163.com" target="_blank" rel="noopener">http://hub-mirror.c.163.com</a></p>
 <h2 id="制作-运行镜像"><a href="#制作-运行镜像" class="headerlink" title="制作/运行镜像"></a>制作/运行镜像</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/docker/doodle.git</span><br><span class="line">cd doodle/cheers2019 &amp;&amp; docker build -t davidxu5945/cheers2019 .</span><br><span class="line">docker run -it --rm davidxu5945/cheers2019</span><br></pre></td></tr></table></figure>
 
@@ -52,6 +54,7 @@
     <url>/2020/01/20/install-nodejs/</url>
     <content><![CDATA[<p>安装了很多次环境，每次都要到网上去找资料，还是自己记录一下比较好。</p>
 <h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><p>本地开发经常会有使用不同版本开发的需求。<br>Mac上可以安装nvm进行版本管理。</p>
+<a id="more"></a>
 <h2 id="配置npm"><a href="#配置npm" class="headerlink" title="配置npm"></a>配置npm</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 查看配置</span><br><span class="line">npm config list</span><br><span class="line"># 添加缓存位置</span><br><span class="line">npm config set prefix &quot;~&#x2F;nodejs&#x2F;npm_global&quot;</span><br><span class="line">npm config set cache &quot;~&#x2F;nodejs&#x2F;npm_cache&quot;</span><br><span class="line"># 添加镜像</span><br><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>技术</category>
@@ -66,6 +69,7 @@
     <url>/2020/01/17/work-flow-publish-notice/</url>
     <content><![CDATA[<h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><p>存在多个测试环境</p>
 <p>需求上测试环境，需要让测试发布，发布后，经常需要人工问下，是否发布完成。</p>
+<a id="more"></a>
 <h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>通过统一的系统发布通知，减少低效的人工沟通</p>
 <h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><p>建立一个通知系统，可作为中间调度， 微信、钉钉机器人</p>
 <ol>
@@ -88,12 +92,13 @@
     <url>/2020/01/17/java-stream-sort/</url>
     <content><![CDATA[<h1 id="Java-流式对比写法"><a href="#Java-流式对比写法" class="headerlink" title="Java 流式对比写法"></a>Java 流式对比写法</h1><h2 id="场景定义"><a href="#场景定义" class="headerlink" title="场景定义"></a>场景定义</h2><ol>
 <li>多个对比条件</li>
-<li>条件之间有优先级</li>
-</ol>
+<li>条件之间有优先级<a id="more"></a>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 三种条件，权重逐个降低</span></span><br><span class="line"><span class="comment">// 第一个条件，无法判断先后顺序的，由后一个条件继续比较</span></span><br><span class="line">Comparator&lt;OrderGoods&gt; notCouponCmp = (o1, o2) -&gt; o1.getId().equals(notCouponGoodsId) ? <span class="number">1</span> : o2.getId().equals(notCouponGoodsId) ? -<span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">Comparator&lt;OrderGoods&gt; couponCmp = (o1, o2) -&gt; o1.getId().equals(couponGoodsId) ? <span class="number">1</span> : o2.getId().equals(couponGoodsId) ? -<span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">Comparator&lt;OrderGoods&gt; taxCmp = (o1, o2) -&gt; &#123;</span><br><span class="line">    <span class="keyword">boolean</span> o1In = taxGoodsId.contains(o1.getId());</span><br><span class="line">    <span class="keyword">boolean</span> o2In = taxGoodsId.contains(o2.getId());</span><br><span class="line">    <span class="keyword">if</span> (o1In &amp;&amp; !o2In) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!o1In &amp;&amp; o2In) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> o1.getId().compareTo(o2.getId());</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> orderGoodsList.stream()</span><br><span class="line">        .sorted(Comparator.nullsLast(notCouponCmp).thenComparing(couponCmp).thenComparing(taxCmp))</span><br><span class="line">        .collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
 
 
 
+</li>
+</ol>
 <h2 id="引申问题：sorted方法调用发生了什么？"><a href="#引申问题：sorted方法调用发生了什么？" class="headerlink" title="引申问题：sorted方法调用发生了什么？"></a>引申问题：sorted方法调用发生了什么？</h2><p>用了什么排序算法？</p>
 <p>参考：<a href="https://blog.csdn.net/TimHeath/article/details/68930482" target="_blank" rel="noopener">https://blog.csdn.net/TimHeath/article/details/68930482</a></p>
 ]]></content>
@@ -122,6 +127,7 @@
     <title>读书笔记-写给忙碌的人的心脏病课</title>
     <url>/2019/09/07/cardiology-class-for-busy-people/</url>
     <content><![CDATA[<p>最近老爸生病了，从一篇公众号文章——<a href="https://mp.weixin.qq.com/s/lbV3sgMc9ao76Yghe3wUSw" target="_blank" rel="noopener">学个教程把自己学进医院了</a>里看到这本书。看着感觉自己也快生病了，主要最近休息的不是很好，晚上睡眠时间有时都达不到6小时。<br>我用marginnote做了笔记，并在onedrive备份了源文件。</p>
+<a id="more"></a>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=1000 height=800 src="https://www.processon.com/view/5d7358d6e4b03461a39feb4d#map"></iframe>
 
 
