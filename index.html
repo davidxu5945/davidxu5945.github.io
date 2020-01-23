@@ -142,17 +142,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">3</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">7</span></a>
 
   </li>
         
@@ -216,7 +216,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-01-23 10:54:18 / 修改时间：13:30:31" itemprop="dateCreated datePublished" datetime="2020-01-23T10:54:18+08:00">2020-01-23</time>
+              <time title="创建时间：2020-01-23 10:54:18 / 修改时间：14:26:25" itemprop="dateCreated datePublished" datetime="2020-01-23T10:54:18+08:00">2020-01-23</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,7 +253,7 @@
 <h3 id="月份英文"><a href="#月份英文" class="headerlink" title="月份英文"></a>月份英文</h3><p>上代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="comment">// y 与 yyyy 是一样的效果</span></span><br><span class="line">  System.out.println(dateToString(t, <span class="string">"d MMM y"</span>));</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <p>这里需要确认是指定输出语言，偷个懒，没暴露入参，指定为英文<code>Locale.US</code>。<br>还有一些国家也是英文，也可直接指定英文<code>Locale.ENGLISH</code>。<br>否则会取默认值。（具体默认值是啥，我也不知道😭，<del>跟服务器设置有关？</del>）</p>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>在搜索资料过程中，发现一个梗，19到20年的事件格式化<br>2019-12-29 被格式化为 2020-12-29<br>原因是，字符串<code>y</code>被写成了<code>Y</code><br>y 是 Year、Y 是 Week Year。<br>按周计年的第一周是指：以星期一为周始，以星期日为周末，第一个包含该年度四天以上的周。</p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>在搜索资料过程中，发现一个梗，19到20年的时间格式化，2019-12-29 被格式化为 2020-12-29。<br>原因是，字符串<code>y</code>被写成了<code>Y</code><br>y 是 Year、Y 是 Week Year。<br>按周计年的第一周是指：以星期一为周始，以星期日为周末，第一个包含该年度四天以上的周。</p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=1000 height=800 src="https://www.jdoodle.com/embed/v0/1OOP"></iframe>
 
       
@@ -822,6 +822,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="阿西"
+      src="/images/avatar.gif">
   <p class="site-author-name" itemprop="name">阿西</p>
   <div class="site-description" itemprop="description">一个小站</div>
 </div>
