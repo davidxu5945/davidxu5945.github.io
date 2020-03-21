@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>good-visual-tool-grafana</title>
+    <url>/2020/02/17/good-visual-tool-grafana/</url>
+    <content><![CDATA[<p>公司里用到一个工具Grafana，可以连接很多数据源进行绘图。<br>感觉很方便，自己也搞一个玩下。</p>
+<p>为了部署方便，放在NAS的docker上运行。<a href="https://www.jianshu.com/p/fc6a85d830ab" target="_blank" rel="noopener">参考资料</a></p>
+<a id="more"></a>
+
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>图表</tag>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python数组拆分</title>
+    <url>/2020/02/07/python-list-split/</url>
+    <content><![CDATA[<p>批量处理数据时，经常需要切分数组</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">split_list</span><span class="params">(x,n,newList=[])</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(x) &lt;= n:</span><br><span class="line">        newList.append(x)</span><br><span class="line">        <span class="keyword">return</span> newList</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        newList.append(x[:n])</span><br><span class="line">        <span class="keyword">return</span> split_list(x[n:],n)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment"># printMonth(2020, 1)</span></span><br><span class="line">    ids = [<span class="number">6253102</span>,<span class="number">6253125</span>,<span class="number">6253144</span>……]</span><br><span class="line">    print(len(ids))</span><br><span class="line">    splitedList = split_list(ids,<span class="number">64</span>)</span><br><span class="line">    <span class="comment"># print(splitedList)</span></span><br><span class="line">    print(len(splitedList))</span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> li <span class="keyword">in</span> splitedList:</span><br><span class="line">        i = i+ <span class="number">1</span></span><br><span class="line">        print(i,li)</span><br><span class="line">    print(<span class="string">"done"</span>)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术</category>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>备忘</tag>
+        <tag>工具方法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL写法备忘</title>
+    <url>/2020/02/07/sql-writing-memo/</url>
+    <content><![CDATA[<p>在工作中经常会遇到，写SQL的场景。<br>记录一下，供后续查询</p>
+<h2 id="mysql中将多行数据合并成一行数据"><a href="#mysql中将多行数据合并成一行数据" class="headerlink" title="mysql中将多行数据合并成一行数据"></a>mysql中将多行数据合并成一行数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">GROUP_CONCAT</span>(<span class="keyword">id</span> SEPARATOR <span class="string">','</span>) c <span class="keyword">FROM</span> tableName</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="比较两个时间的差值"><a href="#比较两个时间的差值" class="headerlink" title="比较两个时间的差值"></a>比较两个时间的差值</h2><p>TIMESTAMPDIFF([HOUR/SECONDS], [time1],[time2])</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> o.site_from,o.billno,o.add_time,e.order_expire_time,e.payment_expire_time,<span class="keyword">TIMESTAMPDIFF</span>(<span class="keyword">HOUR</span>, o.add_time,e.order_expire_time) dif,p.payment_method <span class="keyword">from</span> ots_order o </span><br><span class="line">      <span class="keyword">inner</span> <span class="keyword">join</span> ots_order_extend e <span class="keyword">on</span> o.billno=e.billno</span><br><span class="line">      <span class="keyword">inner</span> <span class="keyword">join</span> ots_order_payment p <span class="keyword">on</span> p.billno=e.billno</span><br><span class="line">      <span class="keyword">where</span> p.payment_method=<span class="string">'ebanx-oxxo'</span> </span><br><span class="line">      <span class="keyword">and</span> o.status!=<span class="number">16</span></span><br><span class="line">      <span class="keyword">and</span> o.site_from <span class="keyword">in</span>(<span class="string">'andshmx'</span>,<span class="string">'iosshmx'</span>,<span class="string">'pwmx'</span>,<span class="string">'mx'</span>)</span><br><span class="line">      <span class="keyword">and</span> <span class="keyword">TIMESTAMPDIFF</span>(<span class="keyword">HOUR</span>, o.add_time,e.order_expire_time)=<span class="number">112</span></span><br><span class="line">      <span class="keyword">and</span> o.add_time&gt;<span class="string">'2020-02-13 15:00:00'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="计算一个时间之后的某个时间"><a href="#计算一个时间之后的某个时间" class="headerlink" title="计算一个时间之后的某个时间"></a>计算一个时间之后的某个时间</h2><p>date_add(now(), interval [num] [hour/month])</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> o.billno,o.last_update_time <span class="keyword">from</span> ots_order o <span class="keyword">inner</span> <span class="keyword">join</span> ots_order_payment p <span class="keyword">on</span> o.billno = p.billno</span><br><span class="line">      <span class="keyword">inner</span> <span class="keyword">join</span> ots_order_extend e <span class="keyword">on</span> o.billno=e.billno</span><br><span class="line">      <span class="keyword">left</span> <span class="keyword">join</span> ots_order_cancel c <span class="keyword">on</span> o.billno =c.billno</span><br><span class="line">      <span class="keyword">where</span> o.status=<span class="number">16</span> <span class="keyword">and</span> p.payment_method=<span class="string">'ebanx-oxxo'</span></span><br><span class="line">      <span class="keyword">and</span> o.is_test=<span class="number">0</span></span><br><span class="line">      <span class="keyword">and</span> <span class="keyword">date_add</span>(o.add_time, <span class="built_in">interval</span> <span class="number">24</span> <span class="keyword">hour</span>) = e.order_expire_time</span><br></pre></td></tr></table></figure>
+
+<h2 id="case-when"><a href="#case-when" class="headerlink" title="case when"></a>case when</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">CASE a.shipping_country_id </span><br><span class="line">WHEN 17 THEN '973' <span class="comment">-- 巴林</span></span><br><span class="line">WHEN 113 THEN '965' <span class="comment">-- 科威特</span></span><br><span class="line">WHEN 162 THEN '968' <span class="comment">-- 阿曼</span></span><br><span class="line">WHEN 175 THEN '974' <span class="comment">-- 卡塔尔</span></span><br><span class="line">WHEN 186 THEN '966' <span class="comment">-- 沙特阿拉伯</span></span><br><span class="line">WHEN 224 THEN '971' <span class="comment">-- 阿联酋</span></span><br><span class="line">WHEN 209 THEN '886' <span class="comment">-- 台湾</span></span><br><span class="line">WHEN 233 THEN '84' <span class="comment">-- 越南</span></span><br><span class="line">WHEN 100 THEN '91' <span class="comment">-- 印度</span></span><br><span class="line">ELSE a.shipping_telephone_area_code  <span class="keyword">END</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术</category>
+        <category>sql</category>
+      </categories>
+      <tags>
+        <tag>备忘</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java日期格式化那些事</title>
     <url>/2020/01/23/java-date-format/</url>
     <content><![CDATA[<h2 id="时间格式化"><a href="#时间格式化" class="headerlink" title="时间格式化"></a>时间格式化</h2><p>今天做一个需求，需要将日期作为如下格式展示。</p>
@@ -20,7 +72,8 @@
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=1000 height=800 src="https://www.jdoodle.com/embed/v0/1OOP"></iframe>
 ]]></content>
       <categories>
-        <category>技术 - java</category>
+        <category>技术</category>
+        <category>java</category>
       </categories>
       <tags>
         <tag>开发有感</tag>
@@ -42,9 +95,9 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># From java image, version : 8</span><br><span class="line"># 指定镜像，这里用网易云仓库的java8镜像</span><br><span class="line">FROM hub.c.163.com&#x2F;library&#x2F;java:8-jre</span><br><span class="line">#FROM java:openjdk-8-alpine</span><br><span class="line"></span><br><span class="line"># 挂载test-docker目录,创建&#x2F;tmp目录并持久化到Docker数据文件夹，</span><br><span class="line"># 因为Spring Boot使用的内嵌Tomcat容器默认使用&#x2F;tmp作为工作目录。</span><br><span class="line">VOLUME &#x2F;tmp</span><br><span class="line"></span><br><span class="line"># COPY or ADD to image</span><br><span class="line"># 将编译目标jar包复制到&#x2F;app.jar</span><br><span class="line">ADD $&#123;JAR_FILE&#125; app.jar</span><br><span class="line"></span><br><span class="line">RUN bash -c &quot;touch &#x2F;app.jar&quot;</span><br><span class="line"></span><br><span class="line"># 默认8080端口</span><br><span class="line"># 指定项目暴露的端口号，与项目配置一样,即容器配置的暴露端口</span><br><span class="line">EXPOSE 8080</span><br><span class="line">#ENTRYPOINT 执行项目 app.jar。为了缩短 Tomcat 启动时间，添加一个系统属性指向 &quot;&#x2F;dev&#x2F;urandom&quot; 作为 Entropy Source</span><br><span class="line">#ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;, &quot;app.jar&quot;]</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-Djava.security.egd&#x3D;file:&#x2F;dev&#x2F;.&#x2F;urandom&quot;,&quot;-jar&quot;,&quot;&#x2F;app.jar&quot;]</span><br><span class="line">#ENTRYPOINT &quot;ls -l&quot;</span><br><span class="line">#ENTRYPOINT &quot;ls -l&quot;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>技术</category>
+        <category>docker</category>
       </categories>
       <tags>
-        <tag>docker</tag>
         <tag>学习新技术</tag>
       </tags>
   </entry>
@@ -102,7 +155,8 @@
 <p>参考：<a href="https://blog.csdn.net/TimHeath/article/details/68930482" target="_blank" rel="noopener">https://blog.csdn.net/TimHeath/article/details/68930482</a></p>
 ]]></content>
       <categories>
-        <category>技术 - java</category>
+        <category>技术</category>
+        <category>java</category>
       </categories>
       <tags>
         <tag>开发有感</tag>
@@ -115,9 +169,9 @@
 ]]></content>
       <categories>
         <category>技术</category>
+        <category>java</category>
       </categories>
       <tags>
-        <tag>java</tag>
         <tag>读后实践</tag>
       </tags>
   </entry>
@@ -144,9 +198,9 @@
 ]]></content>
       <categories>
         <category>生活</category>
+        <category>读书笔记</category>
       </categories>
       <tags>
-        <tag>读书笔记</tag>
         <tag>健康</tag>
       </tags>
   </entry>

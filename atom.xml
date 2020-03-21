@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-25T01:09:16.842Z</updated>
+  <updated>2020-02-19T01:56:33.130Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,93 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>good-visual-tool-grafana</title>
+    <link href="http://yoursite.com/2020/02/17/good-visual-tool-grafana/"/>
+    <id>http://yoursite.com/2020/02/17/good-visual-tool-grafana/</id>
+    <published>2020-02-17T09:21:17.000Z</published>
+    <updated>2020-02-19T01:56:33.130Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;公司里用到一个工具Grafana，可以连接很多数据源进行绘图。&lt;br&gt;感觉很方便，自己也搞一个玩下。&lt;/p&gt;
+&lt;p&gt;为了部署方便，放在NAS的docker上运行。&lt;a href=&quot;https://www.jianshu.com/p/fc6a85d830ab&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;参考资料&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="图表" scheme="http://yoursite.com/tags/%E5%9B%BE%E8%A1%A8/"/>
+    
+      <category term="软件" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python数组拆分</title>
+    <link href="http://yoursite.com/2020/02/07/python-list-split/"/>
+    <id>http://yoursite.com/2020/02/07/python-list-split/</id>
+    <published>2020-02-07T02:09:04.000Z</published>
+    <updated>2020-02-07T02:20:42.114Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;批量处理数据时，经常需要切分数组&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="python" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/python/"/>
+    
+    
+      <category term="备忘" scheme="http://yoursite.com/tags/%E5%A4%87%E5%BF%98/"/>
+    
+      <category term="工具方法" scheme="http://yoursite.com/tags/%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQL写法备忘</title>
+    <link href="http://yoursite.com/2020/02/07/sql-writing-memo/"/>
+    <id>http://yoursite.com/2020/02/07/sql-writing-memo/</id>
+    <published>2020-02-07T01:59:46.000Z</published>
+    <updated>2020-02-25T15:19:38.660Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在工作中经常会遇到，写SQL的场景。&lt;br&gt;记录一下，供后续查询&lt;/p&gt;
+&lt;h2 id=&quot;mysql中将多行数据合并成一行数据&quot;&gt;&lt;a href=&quot;#mysql中将多行数据合并成一行数据&quot; class=&quot;headerlink&quot; title=&quot;mysql中将多行数据合并成一行数据&quot;&gt;&lt;/a&gt;mysql中将多行数据合并成一行数据&lt;/h2&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;GROUP_CONCAT&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;id&lt;/span&gt; SEPARATOR &lt;span class=&quot;string&quot;&gt;&#39;,&#39;&lt;/span&gt;) c &lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; tableName&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="sql" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/sql/"/>
+    
+    
+      <category term="备忘" scheme="http://yoursite.com/tags/%E5%A4%87%E5%BF%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java日期格式化那些事</title>
     <link href="http://yoursite.com/2020/01/23/java-date-format/"/>
     <id>http://yoursite.com/2020/01/23/java-date-format/</id>
     <published>2020-01-23T02:54:18.000Z</published>
-    <updated>2020-01-25T01:09:16.842Z</updated>
+    <updated>2020-01-25T01:11:11.334Z</updated>
     
     <summary type="html">
     
@@ -33,7 +115,9 @@
     </summary>
     
     
-      <category term="技术 - java" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF-java/"/>
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="java" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/java/"/>
     
     
       <category term="开发有感" scheme="http://yoursite.com/tags/%E5%BC%80%E5%8F%91%E6%9C%89%E6%84%9F/"/>
@@ -45,7 +129,7 @@
     <link href="http://yoursite.com/2020/01/21/docker-introduction/"/>
     <id>http://yoursite.com/2020/01/21/docker-introduction/</id>
     <published>2020-01-21T02:22:31.000Z</published>
-    <updated>2020-01-23T06:32:50.436Z</updated>
+    <updated>2020-01-25T01:24:58.175Z</updated>
     
     <summary type="html">
     
@@ -57,8 +141,8 @@
     
       <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
+      <category term="docker" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/docker/"/>
     
-      <category term="docker" scheme="http://yoursite.com/tags/docker/"/>
     
       <category term="学习新技术" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0%E6%96%B0%E6%8A%80%E6%9C%AF/"/>
     
@@ -115,7 +199,7 @@
     <link href="http://yoursite.com/2020/01/17/java-stream-sort/"/>
     <id>http://yoursite.com/2020/01/17/java-stream-sort/</id>
     <published>2020-01-17T02:14:37.000Z</published>
-    <updated>2020-01-25T01:09:29.686Z</updated>
+    <updated>2020-01-25T01:11:08.750Z</updated>
     
     <summary type="html">
     
@@ -126,7 +210,9 @@
     </summary>
     
     
-      <category term="技术 - java" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF-java/"/>
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="java" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/java/"/>
     
     
       <category term="开发有感" scheme="http://yoursite.com/tags/%E5%BC%80%E5%8F%91%E6%9C%89%E6%84%9F/"/>
@@ -138,7 +224,7 @@
     <link href="http://yoursite.com/2019/09/07/cardiology-class-for-busy-people/"/>
     <id>http://yoursite.com/2019/09/07/cardiology-class-for-busy-people/</id>
     <published>2019-09-07T12:40:53.000Z</published>
-    <updated>2020-01-23T06:33:19.089Z</updated>
+    <updated>2020-01-25T01:25:06.563Z</updated>
     
     <summary type="html">
     
@@ -149,8 +235,8 @@
     
       <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
     
+      <category term="读书笔记" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="读书笔记" scheme="http://yoursite.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
       <category term="健康" scheme="http://yoursite.com/tags/%E5%81%A5%E5%BA%B7/"/>
     

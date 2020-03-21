@@ -48,20 +48,20 @@
   };
 </script>
 
-  <meta name="description" content="Java 流式对比写法场景定义 多个对比条件 条件之间有优先级">
+  <meta name="description" content="在工作中经常会遇到，写SQL的场景。记录一下，供后续查询 mysql中将多行数据合并成一行数据1SELECT GROUP_CONCAT(id SEPARATOR &#39;,&#39;) c FROM tableName">
 <meta property="og:type" content="article">
-<meta property="og:title" content=" Java 流式对比写法">
-<meta property="og:url" content="http://yoursite.com/2020/01/17/java-stream-sort/index.html">
+<meta property="og:title" content="SQL写法备忘">
+<meta property="og:url" content="http://yoursite.com/2020/02/07/sql-writing-memo/index.html">
 <meta property="og:site_name" content="阿西的笔记">
-<meta property="og:description" content="Java 流式对比写法场景定义 多个对比条件 条件之间有优先级">
+<meta property="og:description" content="在工作中经常会遇到，写SQL的场景。记录一下，供后续查询 mysql中将多行数据合并成一行数据1SELECT GROUP_CONCAT(id SEPARATOR &#39;,&#39;) c FROM tableName">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-01-17T02:14:37.000Z">
-<meta property="article:modified_time" content="2020-01-25T01:11:08.750Z">
+<meta property="article:published_time" content="2020-02-07T01:59:46.000Z">
+<meta property="article:modified_time" content="2020-02-25T15:19:38.660Z">
 <meta property="article:author" content="阿西">
-<meta property="article:tag" content="开发有感">
+<meta property="article:tag" content="备忘">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/01/17/java-stream-sort/">
+<link rel="canonical" href="http://yoursite.com/2020/02/07/sql-writing-memo/">
 
 
 <script id="page-configurations">
@@ -73,7 +73,7 @@
   };
 </script>
 
-  <title> Java 流式对比写法 | 阿西的笔记</title>
+  <title>SQL写法备忘 | 阿西的笔记</title>
   
 
 
@@ -199,7 +199,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/17/java-stream-sort/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/07/sql-writing-memo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -212,7 +212,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-           Java 流式对比写法
+          SQL写法备忘
         </h1>
 
         <div class="post-meta">
@@ -222,14 +222,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-01-17 10:14:37" itemprop="dateCreated datePublished" datetime="2020-01-17T10:14:37+08:00">2020-01-17</time>
+              <time title="创建时间：2020-02-07 09:59:46" itemprop="dateCreated datePublished" datetime="2020-02-07T09:59:46+08:00">2020-02-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-25 09:11:08" itemprop="dateModified" datetime="2020-01-25T09:11:08+08:00">2020-01-25</time>
+                <time title="修改时间：2020-02-25 23:19:38" itemprop="dateModified" datetime="2020-02-25T23:19:38+08:00">2020-02-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -243,8 +243,8 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/sql/" itemprop="url" rel="index">
+                    <span itemprop="name">sql</span>
                   </a>
                 </span>
             </span>
@@ -260,18 +260,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Java-流式对比写法"><a href="#Java-流式对比写法" class="headerlink" title="Java 流式对比写法"></a>Java 流式对比写法</h1><h2 id="场景定义"><a href="#场景定义" class="headerlink" title="场景定义"></a>场景定义</h2><ol>
-<li>多个对比条件</li>
-<li>条件之间有优先级<a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 三种条件，权重逐个降低</span></span><br><span class="line"><span class="comment">// 第一个条件，无法判断先后顺序的，由后一个条件继续比较</span></span><br><span class="line">Comparator&lt;OrderGoods&gt; notCouponCmp = (o1, o2) -&gt; o1.getId().equals(notCouponGoodsId) ? <span class="number">1</span> : o2.getId().equals(notCouponGoodsId) ? -<span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">Comparator&lt;OrderGoods&gt; couponCmp = (o1, o2) -&gt; o1.getId().equals(couponGoodsId) ? <span class="number">1</span> : o2.getId().equals(couponGoodsId) ? -<span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">Comparator&lt;OrderGoods&gt; taxCmp = (o1, o2) -&gt; &#123;</span><br><span class="line">    <span class="keyword">boolean</span> o1In = taxGoodsId.contains(o1.getId());</span><br><span class="line">    <span class="keyword">boolean</span> o2In = taxGoodsId.contains(o2.getId());</span><br><span class="line">    <span class="keyword">if</span> (o1In &amp;&amp; !o2In) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!o1In &amp;&amp; o2In) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> o1.getId().compareTo(o2.getId());</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> orderGoodsList.stream()</span><br><span class="line">        .sorted(Comparator.nullsLast(notCouponCmp).thenComparing(couponCmp).thenComparing(taxCmp))</span><br><span class="line">        .collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+        <p>在工作中经常会遇到，写SQL的场景。<br>记录一下，供后续查询</p>
+<h2 id="mysql中将多行数据合并成一行数据"><a href="#mysql中将多行数据合并成一行数据" class="headerlink" title="mysql中将多行数据合并成一行数据"></a>mysql中将多行数据合并成一行数据</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">GROUP_CONCAT</span>(<span class="keyword">id</span> SEPARATOR <span class="string">','</span>) c <span class="keyword">FROM</span> tableName</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="比较两个时间的差值"><a href="#比较两个时间的差值" class="headerlink" title="比较两个时间的差值"></a>比较两个时间的差值</h2><p>TIMESTAMPDIFF([HOUR/SECONDS], [time1],[time2])</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> o.site_from,o.billno,o.add_time,e.order_expire_time,e.payment_expire_time,<span class="keyword">TIMESTAMPDIFF</span>(<span class="keyword">HOUR</span>, o.add_time,e.order_expire_time) dif,p.payment_method <span class="keyword">from</span> ots_order o </span><br><span class="line">      <span class="keyword">inner</span> <span class="keyword">join</span> ots_order_extend e <span class="keyword">on</span> o.billno=e.billno</span><br><span class="line">      <span class="keyword">inner</span> <span class="keyword">join</span> ots_order_payment p <span class="keyword">on</span> p.billno=e.billno</span><br><span class="line">      <span class="keyword">where</span> p.payment_method=<span class="string">'ebanx-oxxo'</span> </span><br><span class="line">      <span class="keyword">and</span> o.status!=<span class="number">16</span></span><br><span class="line">      <span class="keyword">and</span> o.site_from <span class="keyword">in</span>(<span class="string">'andshmx'</span>,<span class="string">'iosshmx'</span>,<span class="string">'pwmx'</span>,<span class="string">'mx'</span>)</span><br><span class="line">      <span class="keyword">and</span> <span class="keyword">TIMESTAMPDIFF</span>(<span class="keyword">HOUR</span>, o.add_time,e.order_expire_time)=<span class="number">112</span></span><br><span class="line">      <span class="keyword">and</span> o.add_time&gt;<span class="string">'2020-02-13 15:00:00'</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="计算一个时间之后的某个时间"><a href="#计算一个时间之后的某个时间" class="headerlink" title="计算一个时间之后的某个时间"></a>计算一个时间之后的某个时间</h2><p>date_add(now(), interval [num] [hour/month])</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> o.billno,o.last_update_time <span class="keyword">from</span> ots_order o <span class="keyword">inner</span> <span class="keyword">join</span> ots_order_payment p <span class="keyword">on</span> o.billno = p.billno</span><br><span class="line">      <span class="keyword">inner</span> <span class="keyword">join</span> ots_order_extend e <span class="keyword">on</span> o.billno=e.billno</span><br><span class="line">      <span class="keyword">left</span> <span class="keyword">join</span> ots_order_cancel c <span class="keyword">on</span> o.billno =c.billno</span><br><span class="line">      <span class="keyword">where</span> o.status=<span class="number">16</span> <span class="keyword">and</span> p.payment_method=<span class="string">'ebanx-oxxo'</span></span><br><span class="line">      <span class="keyword">and</span> o.is_test=<span class="number">0</span></span><br><span class="line">      <span class="keyword">and</span> <span class="keyword">date_add</span>(o.add_time, <span class="built_in">interval</span> <span class="number">24</span> <span class="keyword">hour</span>) = e.order_expire_time</span><br></pre></td></tr></table></figure>
 
-
-</li>
-</ol>
-<h2 id="引申问题：sorted方法调用发生了什么？"><a href="#引申问题：sorted方法调用发生了什么？" class="headerlink" title="引申问题：sorted方法调用发生了什么？"></a>引申问题：sorted方法调用发生了什么？</h2><p>用了什么排序算法？</p>
-<p>参考：<a href="https://blog.csdn.net/TimHeath/article/details/68930482" target="_blank" rel="noopener">https://blog.csdn.net/TimHeath/article/details/68930482</a></p>
-
+<h2 id="case-when"><a href="#case-when" class="headerlink" title="case when"></a>case when</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">CASE a.shipping_country_id </span><br><span class="line">WHEN 17 THEN '973' <span class="comment">-- 巴林</span></span><br><span class="line">WHEN 113 THEN '965' <span class="comment">-- 科威特</span></span><br><span class="line">WHEN 162 THEN '968' <span class="comment">-- 阿曼</span></span><br><span class="line">WHEN 175 THEN '974' <span class="comment">-- 卡塔尔</span></span><br><span class="line">WHEN 186 THEN '966' <span class="comment">-- 沙特阿拉伯</span></span><br><span class="line">WHEN 224 THEN '971' <span class="comment">-- 阿联酋</span></span><br><span class="line">WHEN 209 THEN '886' <span class="comment">-- 台湾</span></span><br><span class="line">WHEN 233 THEN '84' <span class="comment">-- 越南</span></span><br><span class="line">WHEN 100 THEN '91' <span class="comment">-- 印度</span></span><br><span class="line">ELSE a.shipping_telephone_area_code  <span class="keyword">END</span></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -281,7 +279,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E5%BC%80%E5%8F%91%E6%9C%89%E6%84%9F/" rel="tag"><i class="fa fa-tag"></i> 开发有感</a>
+              <a href="/tags/%E5%A4%87%E5%BF%98/" rel="tag"><i class="fa fa-tag"></i> 备忘</a>
           </div>
 
         
@@ -290,12 +288,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/01/13/file-breakpoint-upload/" rel="prev" title="文件断点上传">
-      <i class="fa fa-chevron-left"></i> 文件断点上传
+    <a href="/2020/01/23/java-date-format/" rel="prev" title="Java日期格式化那些事">
+      <i class="fa fa-chevron-left"></i> Java日期格式化那些事
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/01/17/work-flow-publish-notice/" rel="next" title="工作流-发布通知系统">
-      工作流-发布通知系统 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/02/07/python-list-split/" rel="next" title="python数组拆分">
+      python数组拆分 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -356,7 +354,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-流式对比写法"><span class="nav-number">1.</span> <span class="nav-text">Java 流式对比写法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#场景定义"><span class="nav-number">1.1.</span> <span class="nav-text">场景定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引申问题：sorted方法调用发生了什么？"><span class="nav-number">1.2.</span> <span class="nav-text">引申问题：sorted方法调用发生了什么？</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql中将多行数据合并成一行数据"><span class="nav-number">1.</span> <span class="nav-text">mysql中将多行数据合并成一行数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较两个时间的差值"><span class="nav-number">2.</span> <span class="nav-text">比较两个时间的差值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算一个时间之后的某个时间"><span class="nav-number">3.</span> <span class="nav-text">计算一个时间之后的某个时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#case-when"><span class="nav-number">4.</span> <span class="nav-text">case when</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
