@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java 流式分组</title>
+    <url>/2020/04/01/java-stream-group-by/</url>
+    <content><![CDATA[<p>Stream作为Java的语法糖，已经出来很久了，写的时候还是经常忘记怎么写。<br>这里写一下，经常用到的场景。</p>
+<p>场景：</p>
+<ol>
+<li>分组计数、列表</li>
+<li>分组求和、取最值、求平均</li>
+<li>分组取按条件排序第一个/最后一个</li>
+</ol>
+<a id="more"></a>
+<h2 id="分组计数、列表"><a href="#分组计数、列表" class="headerlink" title="分组计数、列表"></a>分组计数、列表</h2><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=1000 height=800 src="https://jdoodle.com/a/1Ya5"></iframe>
+
+]]></content>
+  </entry>
+  <entry>
     <title>good-visual-tool-grafana</title>
     <url>/2020/02/17/good-visual-tool-grafana/</url>
     <content><![CDATA[<p>公司里用到一个工具Grafana，可以连接很多数据源进行绘图。<br>感觉很方便，自己也搞一个玩下。</p>

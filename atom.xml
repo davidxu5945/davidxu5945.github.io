@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-19T01:56:33.130Z</updated>
+  <updated>2020-04-02T05:49:15.606Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java 流式分组</title>
+    <link href="http://yoursite.com/2020/04/01/java-stream-group-by/"/>
+    <id>http://yoursite.com/2020/04/01/java-stream-group-by/</id>
+    <published>2020-04-01T09:35:08.000Z</published>
+    <updated>2020-04-02T05:49:15.606Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Stream作为Java的语法糖，已经出来很久了，写的时候还是经常忘记怎么写。&lt;br&gt;这里写一下，经常用到的场景。&lt;/p&gt;
+&lt;p&gt;场景：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;分组计数、列表&lt;/li&gt;
+&lt;li&gt;分组求和、取最值、求平均&lt;/li&gt;
+&lt;li&gt;分组取按条件排序第一个/最后一个&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>good-visual-tool-grafana</title>
